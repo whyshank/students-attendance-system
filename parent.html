@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System - Welcome</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #289acb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333333;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #289acb;
+        }
+
+        .btn-nav-login {
+            background-color: #5cb85c;
+            border: 1px solid #4cae4c;
+            color: #ffffff !important;
+            padding: 8px 22px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-nav-login:hover {
+            background-color: #4cae4c;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: #289acb;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(40, 154, 203, 0.25);
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #2080a8;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #555555;
+            border: 1px solid #d2d6de;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #289acb;
+            color: #289acb;
+        }
+
+        .hero-graphic {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .graphic-stat {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #289acb;
+        }
+
+        .graphic-stat.success {
+            border-left-color: #5cb85c;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666666;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        /* Features Section */
+        .features {
+            background: #ffffff;
+            padding: 80px 25px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #777777;
+            font-size: 16px;
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f4f6f9;
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #e8f4f9;
+            color: #289acb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+
+        /* About Section */
+        .about {
+            background-color: #f4f6f9;
+            padding: 80px 25px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #ffffff;
+            padding: 80px 25px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #289acb;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #ffffff;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #d2d6de;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #289acb;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .btn-submit {
+            background-color: #289acb;
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #2080a8;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 30px 25px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="brand">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 64 64">
+                        <path d="M 38,16 A 7,7 0 1,1 24,16 A 7,7 0 1,1 38,16 Z" />
+                        <path d="M 18,44 C 18,34 25,28 35,28 C 39,28 42,29 44,31 L 38,36 C 36,34 33,34 31,34 C 25,34 22,38 22,44 Z" />
+                        <path d="M 18,44 L 46,44 L 46,40 L 18,40 Z" />
+                    </svg>
+                </div>
+                <span class="brand-name">Student Attendance System</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="parent.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="btn-nav-login">Login Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Smart & Seamless Attendance Tracking</h1>
+            <p class="hero-description">
+                Streamline daily attendance management for administrators, teachers, and students. Get real-time insights, automated reporting, and complete transparency in one portal.
+            </p>
+            <div class="hero-buttons">
+                <a href="webpage1.html" class="btn-primary">Access Portal</a>
+                <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+
+        <div class="hero-graphic">
+            <div class="graphic-stat">
+                <span class="stat-label">Daily Active Attendance</span>
+                <span class="stat-value">98.4%</span>
+            </div>
+            <div class="graphic-stat success">
+                <span class="stat-label">Automated Reports Generated</span>
+                <span class="stat-value">12,450+</span>
+            </div>
+            <div class="graphic-stat">
+                <span class="stat-label">Role Support</span>
+                <span class="stat-value">Admin / Teacher / Student</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Designed for Educational Excellence</h2>
+                <p class="section-subtitle">Key features built to simplify institution management</p>
+            </div>
+
+            <div class="grid-features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Real-Time Analytics</h3>
+                    <p class="feature-text">Track daily and monthly attendance percentages across departments with interactive visual charts.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3 class="feature-title">Role-Based Access</h3>
+                    <p class="feature-text">Tailored dashboards for Administrators, Teachers, and Students to ensure data security and ease of use.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Quick Entry</h3>
+                    <p class="feature-text">Teachers can mark class attendance in seconds from any device with automatic absent notifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">About The Project</h2>
+                <p class="section-subtitle">Bridging the gap between technology and education</p>
+            </div>
+            <div class="about-content">
+                <p>The Student Attendance System was developed by <strong>Shashank, Rehan & Satish</strong> to eliminate the inefficiencies of manual roll calls and paper-based tracking. Recognizing the daily challenges faced by educational institutions in maintaining accurate records, this platform was built to provide a seamless, digital-first approach to classroom management.</p>
+                <p>Our core mission is to empower educators with real-time data, save valuable teaching time, and foster a transparent environment where students can easily monitor their own academic consistency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have questions or need technical support? We're here to help.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3 class="feature-title">📍Based in</h3>
+                        <p class="feature-text">Pune, MH</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="feature-title">✉️ Email Address</h3>
+                        <p class="feature-text">shankspeaks1@gmail.com</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="feature-title">📞 Phone Number</h3>
+                        <p class="feature-text">9341330563</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject / Query Type" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Student Attendance System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
