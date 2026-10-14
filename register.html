@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System - Register</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js" defer></script>
+</head>
+<body>
+
+    <div class="register-card">
+        <h1 class="system-title">Student Attendance System</h1>
+        
+        <div class="logo-box">
+            <svg viewBox="0 0 64 64">
+                <path d="M 38,16 A 7,7 0 1,1 24,16 A 7,7 0 1,1 38,16 Z" />
+                <path d="M 18,44 C 18,34 25,28 35,28 C 39,28 42,29 44,31 L 38,36 C 36,34 33,34 31,34 C 25,34 22,38 22,44 Z" />
+                <path d="M 18,44 L 46,44 L 46,40 L 18,40 Z" />
+            </svg>
+        </div>
+
+        <h2 class="panel-title">Create an Account</h2>
+
+        <form id="registerForm">
+            <!-- Role Selection -->
+            <div class="form-group">
+                <label class="form-label">I am registering as a...</label>
+                <select class="form-control" id="roleSelect" required>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+            </div>
+
+            <div class="form-grid">
+                <!-- Common Fields -->
+                <div class="form-group full-width">
+                    <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Contact Number" required>
+                </div>
+
+                <!-- Dynamic Student Fields -->
+                <div class="form-group student-field">
+                    <input type="text" class="form-control" placeholder="Student ID (e.g. 58742)" required>
+                </div>
+                <div class="form-group student-field">
+                    <input type="text" class="form-control" placeholder="Roll No." required>
+                </div>
+                <div class="form-group student-field full-width">
+                    <select class="form-control">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Teacher Fields (Hidden by default) -->
+                <div class="form-group teacher-field hidden full-width">
+                    <input type="text" class="form-control" placeholder="Teacher ID (e.g. T001)">
+                </div>
+                <div class="form-group teacher-field hidden full-width">
+                    <input type="text" class="form-control" placeholder="Department Name (e.g. Mathematics)">
+                </div>
+
+                <!-- Password Setup -->
+                <div class="form-group full-width">
+                    <input type="password" class="form-control" placeholder="Create Password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-register">Register Account</button>
+            
+            <a href="login.html" class="login-link">Already have an account? <span>Sign In Here</span></a>
+        </form>
+    </div>
+</body>
+</html>

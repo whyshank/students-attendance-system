@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Attendance System</title>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <svg viewBox="0 0 64 64">
+                <path d="M 38,16 A 7,7 0 1,1 24,16 A 7,7 0 1,1 38,16 Z" />
+                <path d="M 18,44 C 18,34 25,28 35,28 C 39,28 42,29 44,31 L 38,36 C 36,34 33,34 31,34 C 25,34 22,38 22,44 Z" />
+                <path d="M 18,44 L 46,44 L 46,40 L 18,40 Z" />
+            </svg>
+            <h2>Attendance Sys</h2>
+        </div>
+        
+        <div class="student-profile">
+            <div class="avatar">SK</div>
+            <div class="student-name">Shashank Kumar</div>
+            <div class="student-id">ID: 58742</div>
+            <div class="student-id" style="margin-top: 5px;">B.Sc. Computer Science</div>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link active"><span>📊</span> Dashboard</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>📅</span> Daily Schedule</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>📝</span> Leave Requests</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>⚙️</span> Settings</a></li>
+        </ul>
+
+        <a href="login.html" class="logout-btn">Log Out</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1 class="page-title">Welcome back, Shashank! 👋</h1>
+            <div class="date-display">October 12, 2026 | Fall Semester</div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Total Attendance</span>
+                    <div class="stat-icon icon-blue">📈</div>
+                </div>
+                <div class="stat-value">82%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Classes Present</span>
+                    <div class="stat-icon icon-green">✔️</div>
+                </div>
+                <div class="stat-value">45</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Classes Absent</span>
+                    <div class="stat-icon icon-red">❌</div>
+                </div>
+                <div class="stat-value">10</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Approved Leaves</span>
+                    <div class="stat-icon icon-orange">📄</div>
+                </div>
+                <div class="stat-value">2</div>
+            </div>
+        </div>
+
+        <!-- Daily View Timeline -->
+        <div class="daily-view-container">
+            <div class="date-picker-header">
+                <h3 class="section-title">Daily Session Log</h3>
+                <div class="date-input-group">
+                    <label for="historyDate">Select Date:</label>
+                    <input type="date" id="historyDate" class="date-input" value="2026-09-11">
+                </div>
+            </div>
+
+            <div class="timeline-feed">
+                <!-- Session 1 (M2L01) -->
+                <div class="session-card">
+                    <div class="session-header">
+                        <div class="session-time">
+                            🕒 02:15 PM - 03:15 PM <span class="session-id">(Session: M2L01)</span>
+                        </div>
+                        <span class="badge badge-present">Present</span>
+                    </div>
+                    <div class="session-details">
+                        <h4>Mathematics</h4>
+                        <p>Instructor: Mrs. Milan S. Rane</p>
+                    </div>
+                    <!-- Empty tasks container if no homework was assigned -->
+                    <div class="tasks-container" style="background: transparent; border: 1px dashed #d2d6de; padding: 10px;">
+                        <span style="font-size: 13px; color: #888; font-style: italic;">No homework or assignments recorded for this session.</span>
+                    </div>
+                </div>
+
+                <!-- Session 2 (M2L02) -->
+                <div class="session-card">
+                    <div class="session-header">
+                        <div class="session-time">
+                            🕒 03:15 PM - 04:15 PM <span class="session-id">(Session: M2L02)</span>
+                        </div>
+                        <span class="badge badge-present">Present</span>
+                    </div>
+                    <div class="session-details">
+                        <h4>Mathematics - The Pigeonhole Principle</h4>
+                        <p>Instructor: Mrs. Milan S. Rane</p>
+                    </div>
+                    
+                    <div class="tasks-container">
+                        <span class="task-type">📚 Assigned Homework</span>
+                        <div class="task-item">
+                            <span class="task-icon">►</span>
+                            <span>Solve q2, q4, q9, q14 from page no. 420</span>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-icon">►</span>
+                            <span>Solve ex. 10, 11 from page no. 424</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

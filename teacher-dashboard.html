@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Attendance System</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <svg viewBox="0 0 64 64">
+                <path d="M 38,16 A 7,7 0 1,1 24,16 A 7,7 0 1,1 38,16 Z" />
+                <path d="M 18,44 C 18,34 25,28 35,28 C 39,28 42,29 44,31 L 38,36 C 36,34 33,34 31,34 C 25,34 22,38 22,44 Z" />
+                <path d="M 18,44 L 46,44 L 46,40 L 18,40 Z" />
+            </svg>
+            <h2>Attendance Sys</h2>
+        </div>
+        
+        <div class="teacher-profile">
+            <div class="avatar">MR</div>
+            <div class="teacher-name">Mrs. Milan S. Rane</div>
+            <div class="teacher-id">ID: T001 | Mathematics</div>
+            <div class="teacher-id" style="margin-top: 5px;">milansrane@gmail.com</div>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <span>📊</span> Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span>📝</span> Mark Attendance
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span>📚</span> Sessions & Topics
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span>📋</span> Coursework (HW)
+                </a>
+            </li>
+        </ul>
+
+        <a href="login.html" class="logout-btn">Log Out</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1 class="page-title">Welcome, Mrs. Rane 👋</h1>
+            <div class="date-display">
+                September 11, 2026
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>My Sessions Today</span>
+                    <div class="stat-icon icon-blue">📅</div>
+                </div>
+                <div class="stat-value">2</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Pending Attendance</span>
+                    <div class="stat-icon icon-orange">⚠️</div>
+                </div>
+                <div class="stat-value">1</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Total Students</span>
+                    <div class="stat-icon icon-green">👥</div>
+                </div>
+                <div class="stat-value">120</div>
+            </div>
+        </div>
+
+        <!-- Today's Sessions Table -->
+        <div class="dashboard-section">
+            <div class="section-header-flex">
+                <h3 class="section-title">Today's Sessions</h3>
+                <button class="btn-action">+ Schedule Session</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Session ID</th>
+                        <th>Time</th>
+                        <th>Topic Covered</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>M2L01</strong></td>
+                        <td>02:15:00 - 03:15:00</td>
+                        <td>Pending Topic Assignment</td>
+                        <td><span style="color: #5cb85c; font-weight: 600;">Completed</span></td>
+                        <td><button class="btn-mark" style="background: #289acb;">Edit Roll</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>M2L02</strong></td>
+                        <td>03:15:00 - 04:15:00</td>
+                        <td>The Pigeonhole Principle (Top. 7)</td>
+                        <td><span style="color: #f0ad4e; font-weight: 600;">Pending</span></td>
+                        <td><button class="btn-mark">Mark Attendance</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recent Coursework Table -->
+        <div class="dashboard-section">
+            <div class="section-header-flex">
+                <h3 class="section-title">Coursework & Assignments Issued</h3>
+                <button class="btn-action">+ Add Coursework</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Linked Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12</td>
+                        <td><span class="badge-type">Homework</span></td>
+                        <td>Solve q2, q4, q9, q14 from page no. 420</td>
+                        <td>M2L02</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><span class="badge-type">Homework</span></td>
+                        <td>Solve ex. 10, 11 from page no. 424</td>
+                        <td>M2L02</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><span class="badge-type">Homework</span></td>
+                        <td>Find remainder when 8^401 is divided by 13.</td>
+                        <td>M3L02</td>
+                    </tr>
+                    <tr>
+                        <td>016</td>
+                        <td><span class="badge-type">Assignment</span></td>
+                        <td>Perform Counting Sort in Lab</td>
+                        <td>M8L02</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>

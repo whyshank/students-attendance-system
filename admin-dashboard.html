@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Attendance System</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <svg viewBox="0 0 64 64">
+                <path d="M 38,16 A 7,7 0 1,1 24,16 A 7,7 0 1,1 38,16 Z" />
+                <path d="M 18,44 C 18,34 25,28 35,28 C 39,28 42,29 44,31 L 38,36 C 36,34 33,34 31,34 C 25,34 22,38 22,44 Z" />
+                <path d="M 18,44 L 46,44 L 46,40 L 18,40 Z" />
+            </svg>
+            <h2>Admin Portal</h2>
+        </div>
+        
+        <div class="admin-profile">
+            <div class="avatar">SA</div>
+            <div class="admin-name">System Admin</div>
+            <div class="admin-role">Full Access Privileges</div>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link active"><span>📊</span> Dashboard</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>🎓</span> Manage Courses</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>👨‍🏫</span> Manage Faculty</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>👥</span> Manage Students</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>📈</span> Generate Reports</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><span>⚙️</span> System Settings</a></li>
+        </ul>
+
+        <a href="login.html" class="logout-btn">Secure Logout</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1 class="page-title">System Overview</h1>
+            <div class="date-display">October 2026</div>
+        </div>
+
+        <!-- Quick Actions Row -->
+        <div class="quick-actions">
+            <button class="btn-primary">➕ Register Student</button>
+            <button class="btn-primary">➕ Add Teacher</button>
+            <button class="btn-secondary">📘 Create New Course</button>
+            <button class="btn-secondary">📄 Export Monthly Report</button>
+        </div>
+
+        <!-- System Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Enrolled Students</span>
+                    <div class="stat-icon icon-blue">👥</div>
+                </div>
+                <div class="stat-value">20</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Active Faculty</span>
+                    <div class="stat-icon icon-green">👨‍🏫</div>
+                </div>
+                <div class="stat-value">9</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Active Courses</span>
+                    <div class="stat-icon icon-purple">🎓</div>
+                </div>
+                <div class="stat-value">7</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Pending Leaves</span>
+                    <div class="stat-icon icon-orange">⚠️</div>
+                </div>
+                <div class="stat-value">6</div>
+            </div>
+        </div>
+
+        <!-- Student Directory Section -->
+        <div class="dashboard-section">
+            <div class="table-header-controls">
+                <h3 class="section-title">Recent Student Admissions</h3>
+                <div class="filter-controls">
+                    <input type="text" class="table-search" placeholder="Search by ID or Name...">
+                    <select class="date-filter">
+                        <option value="10">Show 10</option>
+                        <option value="25">Show 25</option>
+                        <option value="all">All</option>
+                    </select>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Roll No.</th>
+                        <th>Full Name</th>
+                        <th>Contact / Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>58742</strong></td>
+                        <td>2671407</td>
+                        <td>Shashank Kumar</td>
+                        <td>shashankjha@gmail.com</td>
+                        <td><a href="#" class="action-link">Edit</a> | <a href="#" class="action-link" style="color: #d9534f;">Deactivate</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>58747</strong></td>
+                        <td>2671406</td>
+                        <td>Rehan Ansari</td>
+                        <td>rehanansari@gmail.com</td>
+                        <td><a href="#" class="action-link">Edit</a> | <a href="#" class="action-link" style="color: #d9534f;">Deactivate</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>58745</strong></td>
+                        <td>2671410</td>
+                        <td>Rutuja Fulsundar</td>
+                        <td>rutujafulsundar@gmail.com</td>
+                        <td><a href="#" class="action-link">Edit</a> | <a href="#" class="action-link" style="color: #d9534f;">Deactivate</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>58619</strong></td>
+                        <td>2671412</td>
+                        <td>Aditi Kale</td>
+                        <td>aditikale@gmail.com</td>
+                        <td><a href="#" class="action-link">Edit</a> | <a href="#" class="action-link" style="color: #d9534f;">Deactivate</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" disabled>&laquo; Prev</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">Next &raquo;</button>
+            </div>
+        </div>
+
+        <!-- Course Directory Section -->
+        <div class="dashboard-section">
+            <div class="table-header-controls">
+                <h3 class="section-title">Course Overview Directory</h3>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>101CS</strong></td>
+                        <td>B.Sc. Computer Science</td>
+                        <td><span style="color: #5cb85c; font-weight: 600;">Active</span></td>
+                        <td><a href="#" class="action-link">Manage Subjects</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>102CS</strong></td>
+                        <td>B.C.A Science</td>
+                        <td><span style="color: #5cb85c; font-weight: 600;">Active</span></td>
+                        <td><a href="#" class="action-link">Manage Subjects</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>105BT</strong></td>
+                        <td>B.Sc. Biotechnology</td>
+                        <td><span style="color: #5cb85c; font-weight: 600;">Active</span></td>
+                        <td><a href="#" class="action-link">Manage Subjects</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="pagination">
+                <button class="page-btn" disabled>&laquo; Prev</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">Next &raquo;</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
